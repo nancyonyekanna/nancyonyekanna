@@ -2,7 +2,7 @@
 
 ### Senior Full Stack Software Engineer — Laravel · Fintech · Real-time systems
 
-📍 Agbor, Delta State, Nigeria · Open to remote · Founder & Lead Engineer @ **Naxfront Ltd**
+📍 Abuja, Nigeria · Open to remote · Founder & Lead Engineer @ **Naxfront Ltd**
 
 Full stack engineer with **6+ years** building and operating production web systems,
 specialising in **PHP/Laravel backends and financial-transaction infrastructure** —
@@ -107,7 +107,7 @@ through build, deployment, and ongoing support.
 
 ### 📫 Reach me
 
-- ✉️ nancyonyekanna2@gmail.com
+- ✉️ nancydev244@gmail.com
 - 💼 [LinkedIn](https://www.linkedin.com/in/nancy-onyekanna-44555b178)
 - 🌐 [naxfront.com](https://naxfront.com)
 
