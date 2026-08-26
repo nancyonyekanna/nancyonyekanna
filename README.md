@@ -1,79 +1,114 @@
-# Hi, I'm Nancy 👋
+# Nancy Onyekanna
 
-### Software engineer — systematic-trading infrastructure & production fintech platforms
+### Senior Full Stack Software Engineer — Laravel · Fintech · Real-time systems
 
-I build the demanding parts of financial software: **real-time, multi-broker trade
-execution**, **no-look-ahead backtesting**, and **full-stack platforms that move real
-money** — wallets, escrow, and payments. I care about correctness under load, clean
-architecture, and systems that stay honest and survive production.
+📍 Agbor, Delta State, Nigeria · Open to remote · Founder & Lead Engineer @ **Naxfront Ltd**
+
+Full stack engineer with **6+ years** building and operating production web systems,
+specialising in **PHP/Laravel backends and financial-transaction infrastructure** —
+escrow, payments, wallets, and the settlement logic that has to be correct when money
+moves. I **own systems rather than tickets**: I make the architecture calls, tune
+what's slow, harden what handles money, and document it so a team can build on it.
+Comfortable across backend, frontend, and infrastructure, with a bias toward
+correctness in domains where money and user trust are at stake.
+
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonwebservices&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
 
 ---
 
-### 🔭 Featured work
+### 🔭 Featured projects
 
-**[algo-trading-infrastructure](https://github.com/nancyonyekanna/algo-trading-infrastructure)** · `Python` · `C#`
-Automated multi-broker futures trading platform. An async engine routes signals to
-**four brokers** (NinjaTrader, MT5/FTMO, Interactive Brokers, Tradovate) over a
-ZeroMQ transport spanning two networked nodes, behind a 12-check risk manager and a
-prop-firm consistency governor — with a FastAPI operations dashboard and a
-restart-safe state reconciler.
+Engineering showcases — architecture, methodology, and selected code. Proprietary
+logic (settlement/fee formulas, trading signals, tuned parameters) is intentionally
+withheld; all credentials are stripped.
 
-**[market-structure-research](https://github.com/nancyonyekanna/market-structure-research)** · `Python` · `FastAPI`
-Systematic-trading research toolkit. Instrument-parallel backtesting with
-walk-forward (in-sample/out-of-sample) validation, a locked-case regression harness,
-and a **causal, no-look-ahead simulator** — proven byte-identical to the live engine
-— plus a zero-build web chart viewer for auditing every read bar-by-bar.
-
-**[game-staking-platform](https://github.com/nancyonyekanna/game-staking-platform)** · `Laravel` · `PHP`
-Competitive-gaming marketplace on Laravel — multi-currency **wallets & ledger**, P2P
+**[game-staking-platform](https://github.com/nancyonyekanna/game-staking-platform)** · `Laravel` · `MySQL` · `Redis` · `Pusher`
+Competitive-gaming marketplace on Laravel: multi-currency **wallets & ledger**, P2P
 **escrow** with disputes, a **matchmaking** queue, and **auto-generated
-single-elimination tournaments**, settled idempotently across **7+ payment gateways**
-with KYC/2FA and real-time updates over Pusher.
+single-elimination tournaments** — settled idempotently across **7+ payment gateways**
+with KYC/2FA and real-time updates.
 
-> These repositories are curated portfolio showcases. Proprietary logic — trading
-> signals, tuned parameters, and settlement/fee formulas — is intentionally excluded;
-> the code shown is illustrative, and all credentials are withheld.
+**[algo-trading-infrastructure](https://github.com/nancyonyekanna/algo-trading-infrastructure)** · `Python` · `asyncio` · `C#`
+Automated multi-broker futures trading platform. An async engine routes signals to
+**four brokers** (NinjaTrader, MT5/FTMO, Interactive Brokers, Tradovate) over a ZeroMQ
+transport across two networked nodes, behind a 12-check risk manager and a prop-firm
+consistency governor — with a FastAPI operations dashboard and a restart-safe reconciler.
+
+**[market-structure-research](https://github.com/nancyonyekanna/market-structure-research)** · `Python` · `pandas` · `FastAPI`
+Systematic-trading research toolkit: instrument-parallel backtesting, **walk-forward
+(in-sample/out-of-sample) validation**, a locked-case regression harness, and a
+**causal, no-look-ahead simulator** — plus a zero-build web chart viewer.
+
+> My primary production system — **Naxcrow** ([naxcrow.com](https://naxcrow.com)), an
+> escrow & payments platform with an audit-grade transaction ledger, KYC, and
+> Paystack/Flutterwave integrations — is private, but I'm happy to walk through the
+> architecture on request.
 
 ---
 
 ### ⚙️ How I work
 
-- **Correctness first.** For backtesting I built a simulator where look-ahead is
-  *impossible by construction* — a single clock hands strategies only past data —
-  and gated it with a golden-master oracle and differential-equivalence tests.
-- **Design for failure.** Gap-detection and back-fill on the data feed, restart
-  reconciliation, idempotent money movement (no double payouts), kill-switches, and
-  encrypted credentials at rest.
-- **Clean boundaries.** Pluggable broker bridges behind one interface; a strategy
-  layer that never knows which broker executes it; services that own each money-moving
-  domain.
-- **Measure honestly.** Walk-forward validation, robustness test suites, and results
-  I can defend — no curve-fit numbers.
+- **Correctness first** in money-moving code — strict consistency across every
+  transaction, idempotent payments (no double settlements), and audit-grade logging
+  that makes reconciliation and disputes traceable end to end.
+- **Design for failure** — webhook idempotency and recovery paths for failed/partial/
+  duplicated transactions, restart reconciliation, and kill-switches.
+- **Make it fast, ship it predictably** — query tuning, indexing, and Redis caching;
+  heavy work moved off the request cycle into queued jobs; Dockerised CI/CD.
 
 ---
 
 ### 🛠️ Tech
 
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
-![asyncio](https://img.shields.io/badge/asyncio-3776AB?logo=python&logoColor=white)
-![pandas](https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
-![ZeroMQ](https://img.shields.io/badge/ZeroMQ-DF0000?logo=zeromq&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?logo=laravel&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+| | |
+|---|---|
+| **Backend** | Laravel · PHP · REST API design · auth & RBAC · queues & background jobs · WebSockets · webhooks |
+| **Databases** | MySQL · schema design & normalisation · query optimisation · indexing · Redis |
+| **Frontend** | JavaScript (ES6+) · Blade · responsive UI · dashboards & data-view interfaces |
+| **DevOps & Cloud** | Docker · Git/GitHub · CI/CD · AWS · VPS & Nginx · cPanel |
+| **Payments & Identity** | Paystack · Flutterwave · KYC / identity-verification APIs |
+| **Testing & Quality** | PHPUnit / Pest · code review · structured logging · production debugging |
+| **Also** | Python (systematic-trading & data tooling) · system architecture · performance tuning · technical documentation |
 
-**Domains:** real-time systems · algorithmic trading · backtesting & simulation ·
-payments & wallets · risk management · API & broker integrations
+---
+
+### 💼 Experience
+
+**Founder & Lead Full Stack Engineer — Naxfront Ltd** · 2024–present
+Own the full technical architecture of the company's fintech products: a secure
+**escrow & transaction engine** (deposits, withdrawals, holds, releases with strict
+consistency), **audit-grade financial logging**, **Paystack/Flutterwave** integrations
+with idempotency and recovery paths, **KYC** and multi-layer validation, Dockerised
+CI/CD, and VPS/Nginx operations.
+
+**Full Stack Software Engineer — Independent / Contract** · 2018–present
+Delivered production apps across fintech, online gaming, and business operations —
+REST API design, relational data modelling, auth/RBAC, and production incident
+resolution (race conditions in transaction handling, performance bottlenecks),
+through build, deployment, and ongoing support.
+
+---
+
+### 🎓 Education & Certifications
+
+- **B.Sc. Nursing Science** — Ambrose Alli University (2016–2021). Self-taught
+  engineer; shipping production web systems since 2018 and full-time in software since.
+- **Google Data Analytics** — Professional Certificate (2026)
 
 ---
 
 ### 📫 Reach me
 
-- ✉️ **support@naxfront.com** · **nancydev244@gmail.com**
+- ✉️ nancyonyekanna2@gmail.com
+- 💼 [LinkedIn](https://www.linkedin.com/in/nancy-onyekanna-44555b178)
+- 🌐 [naxfront.com](https://naxfront.com)
 
-<sub>Correctness, clean architecture, systems that hold up under real load.</sub>
+<sub>Correctness, clean architecture, and systems that hold up when money and user trust are at stake.</sub>
