@@ -11,20 +11,20 @@ architecture, and systems that stay honest and survive production.
 
 ### 🔭 Featured work
 
-**[algo-trading-infrastructure](https://github.com/nancydev244-netizen/algo-trading-infrastructure)** · `Python` · `C#`
+**[algo-trading-infrastructure](https://github.com/nancyonyekanna/algo-trading-infrastructure)** · `Python` · `C#`
 Automated multi-broker futures trading platform. An async engine routes signals to
 **four brokers** (NinjaTrader, MT5/FTMO, Interactive Brokers, Tradovate) over a
 ZeroMQ transport spanning two networked nodes, behind a 12-check risk manager and a
 prop-firm consistency governor — with a FastAPI operations dashboard and a
 restart-safe state reconciler.
 
-**[market-structure-research](https://github.com/nancydev244-netizen/market-structure-research)** · `Python` · `FastAPI`
+**[market-structure-research](https://github.com/nancyonyekanna/market-structure-research)** · `Python` · `FastAPI`
 Systematic-trading research toolkit. Instrument-parallel backtesting with
 walk-forward (in-sample/out-of-sample) validation, a locked-case regression harness,
 and a **causal, no-look-ahead simulator** — proven byte-identical to the live engine
 — plus a zero-build web chart viewer for auditing every read bar-by-bar.
 
-**[game-staking-platform](https://github.com/nancydev244-netizen/game-staking-platform)** · `Laravel` · `PHP`
+**[game-staking-platform](https://github.com/nancyonyekanna/game-staking-platform)** · `Laravel` · `PHP`
 Competitive-gaming marketplace on Laravel — multi-currency **wallets & ledger**, P2P
 **escrow** with disputes, a **matchmaking** queue, and **auto-generated
 single-elimination tournaments**, settled idempotently across **7+ payment gateways**
